@@ -1,0 +1,24 @@
+// Initialize the workspace
+// In the workspace directory, run:
+// $ go work init ./hello
+// The go work init command tells go to create a go.work file for a workspace containing the modules in the ./hello directory.
+// The go.work file has similar syntax to go.mod.
+// The go directive tells Go which version of Go the file should be interpreted with. It’s similar to the go directive in the go.mod file.
+// The use directive tells Go that the module in the hello directory should be main modules when doing a build.
+// So in any subdirectory of workspace the module will be active
+// Run the program in the workspace directory
+// In the workspace directory, run:
+// $ go run example.com/hello
+
+// Clone the repository
+// From the workspace directory, run the git command to clone the repository:
+// $ git clone https://go.googlesource.com/example
+// Add the module to the workspace
+// $ go work use ./example
+
+go 1.20
+
+use (
+	./example
+	./hello
+)
